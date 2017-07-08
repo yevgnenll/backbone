@@ -14,3 +14,8 @@ var myTodo = new Todo();
 var todo2 = new Todo({
     title: 'Check attributes of the logged models in the console.'
 });
+
+var todo3 = new Todo({
+    title: 'This todo is done, so take no action on this one',
+    completed: true
+});
