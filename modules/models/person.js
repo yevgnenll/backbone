@@ -1,6 +1,18 @@
-var Person = new Backbone.Model();
-Person.set({name: 'Jeremy'}, {silent: true});
+var Person = new Backbone.Model({
+    name: 'Jeremy',
+});
 
-console.log(!Person.hasChanged(0));
+Person.validate = function(attrs) {
+    if (!attrs.name) {
+        return 'I need your name';
+    }
+};
 
-console.log(!Person.hasChanged(''));
+Person.set({name: 'Samuel'});
+console.log(Person.get('name'));
+
+console.log(Person.unset('name', {validate: true}));
+// false
+console.log(Person.get('name'));
+
+console.log(JSON.stringify(Person));
