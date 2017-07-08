@@ -7,20 +7,15 @@ var Todo = Backbone.Model.extend({
         console.log('This model has been initialized.');
         this.on('change', function(){
             console.log('- Values for this model have changed.');
+            console.log(JSON.stringify(this));
         });
+    },
+    setTitle: function(newTitle) {
+        this.set({ title: newTitle });
     },
 });
 
 var myTodo = new Todo(); 
 
-myTodo.set('title', 'The listener is tirggered whenever an attribute value changed');
-console.log('title has chaged: ', myTodo.get('title'));
-
-myTodo.set('completed', true);
-
-console.log('completed has chaged: ', myTodo.get('completed'));
-
-myTodo.set({
-    title: 'Changing more than one attribute at the same time only tirggers',
-    completed: true
-});
+myTodo.set('title', 'Check what\'s logged');
+myTodo.setTitle('Go finising on Sunday.');
