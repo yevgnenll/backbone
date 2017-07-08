@@ -5,19 +5,13 @@ var Todo = Backbone.Model.extend({
     },
 });
 
-var myTodo = new Todo();
-
-var todo2 = new Todo({
-    title: 'Check attributes of the logged models in the console.'
+var myTodo = new Todo({
+    title: 'Set through instantiation',
 });
 
-var todo3 = new Todo({
-    title: 'This todo is done, so take no action on this one',
-    completed: true
-});
+console.log(JSON.stringify(myTodo));
 
-console.log('title:', myTodo.get('title'));
+myTodo.set('title', 'Title attribute set through Model.set()');
 
-console.log('title:', todo2.get('title'));
+console.log(JSON.stringify(myTodo));
 
-console.log('title:', todo3.get('title'));
