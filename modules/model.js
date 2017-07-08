@@ -10,3 +10,7 @@ var Todo = Backbone.Model.extend({
 });
 
 var myTodo = new Todo();
+
+var todo2 = new Todo({
+    title: 'Check attributes of the logged models in the console.'
+});
