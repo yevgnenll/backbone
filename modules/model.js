@@ -3,3 +3,5 @@ var Todo = Backbone.Model.extend({
         console.log('this models has beean initailized.');
     }
 });
+
+var myTodo = new Todo();
